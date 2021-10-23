@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		6A2688262723EA6B003A2EE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2688252723EA6B003A2EE0 /* AppDelegate.swift */; };
 		6A2688282723EA6B003A2EE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2688272723EA6B003A2EE0 /* SceneDelegate.swift */; };
-		6A26882A2723EA6B003A2EE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2688292723EA6B003A2EE0 /* ViewController.swift */; };
+		6A26882A2723EA6B003A2EE0 /* RepositoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2688292723EA6B003A2EE0 /* RepositoriesListViewController.swift */; };
 		6A26882D2723EA6B003A2EE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A26882B2723EA6B003A2EE0 /* Main.storyboard */; };
 		6A26882F2723EA6E003A2EE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A26882E2723EA6E003A2EE0 /* Assets.xcassets */; };
 		6A2688322723EA6E003A2EE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2688302723EA6E003A2EE0 /* LaunchScreen.storyboard */; };
 		6A26883D2723EA6F003A2EE0 /* GitRepoInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26883C2723EA6F003A2EE0 /* GitRepoInfoTests.swift */; };
 		6A2688482723EA6F003A2EE0 /* GitRepoInfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2688472723EA6F003A2EE0 /* GitRepoInfoUITests.swift */; };
+		6A2688662723F486003A2EE0 /* RepositoriesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2688642723F486003A2EE0 /* RepositoriesListTableViewCell.swift */; };
+		6A2688672723F486003A2EE0 /* RepositoriesListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A2688652723F486003A2EE0 /* RepositoriesListTableViewCell.xib */; };
+		6A2688702723FC4A003A2EE0 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26886F2723FC4A003A2EE0 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,7 @@
 		6A2688222723EA6B003A2EE0 /* GitRepoInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitRepoInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A2688252723EA6B003A2EE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A2688272723EA6B003A2EE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6A2688292723EA6B003A2EE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6A2688292723EA6B003A2EE0 /* RepositoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListViewController.swift; sourceTree = "<group>"; };
 		6A26882C2723EA6B003A2EE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6A26882E2723EA6E003A2EE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A2688312723EA6E003A2EE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		6A2688432723EA6F003A2EE0 /* GitRepoInfoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitRepoInfoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A2688472723EA6F003A2EE0 /* GitRepoInfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoInfoUITests.swift; sourceTree = "<group>"; };
 		6A2688492723EA6F003A2EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A2688642723F486003A2EE0 /* RepositoriesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListTableViewCell.swift; sourceTree = "<group>"; };
+		6A2688652723F486003A2EE0 /* RepositoriesListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesListTableViewCell.xib; sourceTree = "<group>"; };
+		6A26886F2723FC4A003A2EE0 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +105,11 @@
 		6A2688242723EA6B003A2EE0 /* GitRepoInfo */ = {
 			isa = PBXGroup;
 			children = (
+				6A268877272400F3003A2EE0 /* Common */,
+				6A26886E2723FC39003A2EE0 /* Extension */,
+				6A26885B2723EB5B003A2EE0 /* View */,
 				6A2688252723EA6B003A2EE0 /* AppDelegate.swift */,
 				6A2688272723EA6B003A2EE0 /* SceneDelegate.swift */,
-				6A2688292723EA6B003A2EE0 /* ViewController.swift */,
-				6A26882B2723EA6B003A2EE0 /* Main.storyboard */,
 				6A26882E2723EA6E003A2EE0 /* Assets.xcassets */,
 				6A2688302723EA6E003A2EE0 /* LaunchScreen.storyboard */,
 				6A2688332723EA6E003A2EE0 /* Info.plist */,
@@ -126,6 +133,48 @@
 				6A2688492723EA6F003A2EE0 /* Info.plist */,
 			);
 			path = GitRepoInfoUITests;
+			sourceTree = "<group>";
+		};
+		6A26885B2723EB5B003A2EE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6A2688632723F46D003A2EE0 /* RepositoriesListCell */,
+				6A2688622723F438003A2EE0 /* RepositoriesListView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6A2688622723F438003A2EE0 /* RepositoriesListView */ = {
+			isa = PBXGroup;
+			children = (
+				6A2688292723EA6B003A2EE0 /* RepositoriesListViewController.swift */,
+				6A26882B2723EA6B003A2EE0 /* Main.storyboard */,
+			);
+			path = RepositoriesListView;
+			sourceTree = "<group>";
+		};
+		6A2688632723F46D003A2EE0 /* RepositoriesListCell */ = {
+			isa = PBXGroup;
+			children = (
+				6A2688642723F486003A2EE0 /* RepositoriesListTableViewCell.swift */,
+				6A2688652723F486003A2EE0 /* RepositoriesListTableViewCell.xib */,
+			);
+			path = RepositoriesListCell;
+			sourceTree = "<group>";
+		};
+		6A26886E2723FC39003A2EE0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6A26886F2723FC4A003A2EE0 /* UIViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6A268877272400F3003A2EE0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +283,7 @@
 				6A2688322723EA6E003A2EE0 /* LaunchScreen.storyboard in Resources */,
 				6A26882F2723EA6E003A2EE0 /* Assets.xcassets in Resources */,
 				6A26882D2723EA6B003A2EE0 /* Main.storyboard in Resources */,
+				6A2688672723F486003A2EE0 /* RepositoriesListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +308,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A26882A2723EA6B003A2EE0 /* ViewController.swift in Sources */,
+				6A2688702723FC4A003A2EE0 /* UIViewExtension.swift in Sources */,
+				6A26882A2723EA6B003A2EE0 /* RepositoriesListViewController.swift in Sources */,
+				6A2688662723F486003A2EE0 /* RepositoriesListTableViewCell.swift in Sources */,
 				6A2688262723EA6B003A2EE0 /* AppDelegate.swift in Sources */,
 				6A2688282723EA6B003A2EE0 /* SceneDelegate.swift in Sources */,
 			);
@@ -442,7 +494,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SuSu.GitRepoInfo;
+				PRODUCT_BUNDLE_IDENTIFIER = gitrepo.info.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -460,7 +512,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SuSu.GitRepoInfo;
+				PRODUCT_BUNDLE_IDENTIFIER = gitrepo.info.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
