@@ -58,7 +58,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Public" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwI-ms-r03">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visibility" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwI-ms-r03">
                                 <rect key="frame" x="76" y="74" width="75" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="4RQ-XV-X6b"/>
@@ -131,6 +131,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblGitRepoDescription" destination="rdh-cx-qeS" id="Z1W-aX-IE1"/>
+                <outlet property="lblGitRepoName" destination="7BJ-Ec-Upi" id="oVI-mx-aOV"/>
+                <outlet property="lblLicense" destination="Jj6-pg-sud" id="0CO-ta-fhg"/>
+                <outlet property="lblVisibility" destination="SCN-MS-LPI" id="jIs-WI-pkY"/>
+            </connections>
             <point key="canvasLocation" x="95.652173913043484" y="134.93303571428569"/>
         </tableViewCell>
     </objects>

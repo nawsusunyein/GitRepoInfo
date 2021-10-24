@@ -18,6 +18,13 @@
 		6A2688662723F486003A2EE0 /* RepositoriesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2688642723F486003A2EE0 /* RepositoriesListTableViewCell.swift */; };
 		6A2688672723F486003A2EE0 /* RepositoriesListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A2688652723F486003A2EE0 /* RepositoriesListTableViewCell.xib */; };
 		6A2688702723FC4A003A2EE0 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26886F2723FC4A003A2EE0 /* UIViewExtension.swift */; };
+		6A26888027240281003A2EE0 /* GitRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A26887F27240281003A2EE0 /* GitRepositories.swift */; };
+		6A268888272402A7003A2EE0 /* GitOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A268887272402A7003A2EE0 /* GitOwner.swift */; };
+		6A2688922724073F003A2EE0 /* GitItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2688912724073F003A2EE0 /* GitItems.swift */; };
+		6A268898272408AD003A2EE0 /* GitRepoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A268897272408AD003A2EE0 /* GitRepoPresenter.swift */; };
+		6A2688A12724095F003A2EE0 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2688A02724095F003A2EE0 /* NetworkServices.swift */; };
+		6A2688A9272409B9003A2EE0 /* CommonValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2688A8272409B9003A2EE0 /* CommonValues.swift */; };
+		6A2688C127241BE8003A2EE0 /* GitLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2688C027241BE8003A2EE0 /* GitLicense.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +62,13 @@
 		6A2688642723F486003A2EE0 /* RepositoriesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListTableViewCell.swift; sourceTree = "<group>"; };
 		6A2688652723F486003A2EE0 /* RepositoriesListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesListTableViewCell.xib; sourceTree = "<group>"; };
 		6A26886F2723FC4A003A2EE0 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		6A26887F27240281003A2EE0 /* GitRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositories.swift; sourceTree = "<group>"; };
+		6A268887272402A7003A2EE0 /* GitOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitOwner.swift; sourceTree = "<group>"; };
+		6A2688912724073F003A2EE0 /* GitItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitItems.swift; sourceTree = "<group>"; };
+		6A268897272408AD003A2EE0 /* GitRepoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoPresenter.swift; sourceTree = "<group>"; };
+		6A2688A02724095F003A2EE0 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
+		6A2688A8272409B9003A2EE0 /* CommonValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonValues.swift; sourceTree = "<group>"; };
+		6A2688C027241BE8003A2EE0 /* GitLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitLicense.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +119,9 @@
 		6A2688242723EA6B003A2EE0 /* GitRepoInfo */ = {
 			isa = PBXGroup;
 			children = (
+				6A26889F2724093F003A2EE0 /* Services */,
+				6A2688962724089B003A2EE0 /* Presenter */,
+				6A26887E27240266003A2EE0 /* Model */,
 				6A268877272400F3003A2EE0 /* Common */,
 				6A26886E2723FC39003A2EE0 /* Extension */,
 				6A26885B2723EB5B003A2EE0 /* View */,
@@ -173,8 +190,36 @@
 		6A268877272400F3003A2EE0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6A2688A8272409B9003A2EE0 /* CommonValues.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		6A26887E27240266003A2EE0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6A26887F27240281003A2EE0 /* GitRepositories.swift */,
+				6A268887272402A7003A2EE0 /* GitOwner.swift */,
+				6A2688912724073F003A2EE0 /* GitItems.swift */,
+				6A2688C027241BE8003A2EE0 /* GitLicense.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6A2688962724089B003A2EE0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6A268897272408AD003A2EE0 /* GitRepoPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		6A26889F2724093F003A2EE0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6A2688A02724095F003A2EE0 /* NetworkServices.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,10 +354,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A2688702723FC4A003A2EE0 /* UIViewExtension.swift in Sources */,
+				6A2688A12724095F003A2EE0 /* NetworkServices.swift in Sources */,
+				6A2688A9272409B9003A2EE0 /* CommonValues.swift in Sources */,
 				6A26882A2723EA6B003A2EE0 /* RepositoriesListViewController.swift in Sources */,
+				6A268898272408AD003A2EE0 /* GitRepoPresenter.swift in Sources */,
+				6A26888027240281003A2EE0 /* GitRepositories.swift in Sources */,
+				6A2688C127241BE8003A2EE0 /* GitLicense.swift in Sources */,
 				6A2688662723F486003A2EE0 /* RepositoriesListTableViewCell.swift in Sources */,
 				6A2688262723EA6B003A2EE0 /* AppDelegate.swift in Sources */,
 				6A2688282723EA6B003A2EE0 /* SceneDelegate.swift in Sources */,
+				6A2688922724073F003A2EE0 /* GitItems.swift in Sources */,
+				6A268888272402A7003A2EE0 /* GitOwner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
