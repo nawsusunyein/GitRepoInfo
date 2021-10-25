@@ -13,6 +13,7 @@ class RepositoriesListTableViewCell: UITableViewCell {
     @IBOutlet weak var lblGitRepoDescription : UILabel!
     @IBOutlet weak var lblVisibility : UILabel!
     @IBOutlet weak var lblLicense : UILabel!
+    @IBOutlet weak var imgAvator : UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,14 +22,15 @@ class RepositoriesListTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func bindDataForRepoItem(repoItem : GitItems?){
         self.lblGitRepoName.text = repoItem?.name ?? ""
         self.lblVisibility.text = repoItem?.visibility ?? ""
         self.lblLicense.text = repoItem?.license?.name ?? ""
+        self.lblGitRepoDescription.text = repoItem?.description
+        self.imgAvator.image = ImageUtils.shared.getImageFromUrl(urlString: repoItem?.owner.avatar_url ?? "")
+       
     }
     
 }

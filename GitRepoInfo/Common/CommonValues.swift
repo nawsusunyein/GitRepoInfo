@@ -34,3 +34,9 @@ struct QueryValues{
 struct ScreenTitle{
     static let titleRepositoriesList = "Repositories"
 }
+
+enum APIError : Error{
+    case mimeError
+    case serverError
+    case otherError
+}

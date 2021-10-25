@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RepositoriesListViewController: UIViewController, UISearchBarDelegate, UISearchResultsUpdating{
+class RepositoriesListViewController: GitRepoMainViewController, UISearchBarDelegate, UISearchResultsUpdating{
    
     @IBOutlet weak var repositoryTable : UITableView!
     
@@ -19,7 +19,7 @@ class RepositoriesListViewController: UIViewController, UISearchBarDelegate, UIS
         self.presenter = GitRepoPresenter(view: self, service: NetworkServices())
         self.registerTable()
         self.setupSearchBar()
-        self.setNavigationTitle()
+        self.setNavigationTitle(screenTitle : ScreenTitle.titleRepositoriesList)
     }
 
     
@@ -36,15 +36,11 @@ class RepositoriesListViewController: UIViewController, UISearchBarDelegate, UIS
         self.repositoryTable.tableHeaderView = self.searchController.searchBar
     }
 
-    func setNavigationTitle(){
-        self.title = ScreenTitle.titleRepositoriesList
-    }
-    
     func updateSearchResults(for searchController: UISearchController) {
         self.presenter?.getResultForSearchingWithName(searchText : searchController.searchBar.text)
     }
     
-
+    
 }
 
 extension RepositoriesListViewController : UITableViewDelegate, UITableViewDataSource{
@@ -77,8 +73,10 @@ extension RepositoriesListViewController : GitRepoPresenterView{
         }
     }
     
-    func failure(errorMessage: String) {
-        print("failure")
+    func failure(errorType: String,errorMessage : String) {
+        DispatchQueue.main.async {
+            self.showErrorMessage(title : errorType, message : errorMessage)
+        }
     }
     
     func getResultsForSearchWithRepoName(){

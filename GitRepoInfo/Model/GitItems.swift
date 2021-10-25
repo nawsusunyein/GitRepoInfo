@@ -14,4 +14,5 @@ struct GitItems : Decodable{
     var open_issues : Int
     var topics : [String]
     var license : GitLicense?
+    var description: String?
 }
