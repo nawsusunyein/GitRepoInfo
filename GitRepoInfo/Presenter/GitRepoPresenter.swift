@@ -11,6 +11,8 @@ protocol GitRepoPresenterView : class{
     func success()
     func failure(errorType: String,errorMessage : String)
     func getResultsForSearchWithRepoName()
+    func startShowingLoading()
+    func endShowingLoading()
 }
 
 class GitRepoPresenter {
@@ -28,7 +30,7 @@ class GitRepoPresenter {
     }
         
     func getRepositories(){
-        
+        self.gitRepoListPresenterView?.startShowingLoading()
         networkService?.getRepositories{[weak self] result in
             switch result{
             case .success(let gitRepositories):
@@ -42,18 +44,19 @@ class GitRepoPresenter {
                 let apiError = error as APIError
                 switch apiError{
                 case .mimeError:
-                    errorType = "Mime Type Error"
-                    errorMessage = "Please check mime type"
+                    errorType = ErrorType.mimeError
+                    errorMessage = ErrorMessage.mimeErrorMsg
                 case .serverError:
-                    errorType = "Server Side Error"
-                    errorMessage = "Please check internet connection (or) \n request headers in API (or) \n Server side"
+                    errorType = ErrorType.serverError
+                    errorMessage = ErrorMessage.serverErrorMsg
                 case .otherError:
-                    errorType = "Other Error"
-                    errorMessage = "Please check data response type conversion"
+                    errorType = ErrorType.otherError
+                    errorMessage = ErrorMessage.otherErrorMsg
                 }
                 self?.gitRepoListPresenterView?.failure(errorType: errorType,errorMessage: errorMessage)
            
             }
+            self?.gitRepoListPresenterView?.endShowingLoading()
         }
     }
     
@@ -64,5 +67,5 @@ class GitRepoPresenter {
             }
         }
         self.gitRepoListPresenterView?.getResultsForSearchWithRepoName()
-    }
+  }
 }

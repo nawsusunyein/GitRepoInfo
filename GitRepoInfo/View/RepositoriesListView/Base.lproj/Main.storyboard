@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZNR-Qt-5JS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -24,18 +25,24 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="MO4-vB-Gpr"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="wbc-eS-lvd">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BkX-El-clC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="49k-8N-mwx"/>
                             <constraint firstItem="BkX-El-clC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MfA-jW-4FO"/>
+                            <constraint firstItem="wbc-eS-lvd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YuM-4l-tz2"/>
+                            <constraint firstItem="wbc-eS-lvd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="arv-BX-BUW"/>
                             <constraint firstItem="BkX-El-clC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bg5-Bp-HTE"/>
                             <constraint firstAttribute="bottom" secondItem="BkX-El-clC" secondAttribute="bottom" id="gUF-KI-viG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aHs-ES-BdD"/>
                     <connections>
+                        <outlet property="loading" destination="wbc-eS-lvd" id="MOZ-a2-9WY"/>
                         <outlet property="repositoryTable" destination="BkX-El-clC" id="8xA-bR-0ZM"/>
                     </connections>
                 </viewController>

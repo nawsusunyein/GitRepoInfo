@@ -40,3 +40,15 @@ enum APIError : Error{
     case serverError
     case otherError
 }
+
+struct ErrorType{
+    static let mimeError = "Mime Type Error"
+    static let serverError = "Server Side Error"
+    static let otherError = "Other Error"
+}
+
+struct ErrorMessage{
+    static let mimeErrorMsg = "Please check mime type"
+    static let serverErrorMsg = "Please check internet connection (or) \n request headers in API (or) \n Server side"
+    static let otherErrorMsg = "Please check data response type conversion"
+}

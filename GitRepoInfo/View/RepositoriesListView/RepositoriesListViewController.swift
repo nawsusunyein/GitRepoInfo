@@ -10,6 +10,7 @@ import UIKit
 class RepositoriesListViewController: GitRepoMainViewController, UISearchBarDelegate, UISearchResultsUpdating{
    
     @IBOutlet weak var repositoryTable : UITableView!
+    @IBOutlet weak var loading : UIActivityIndicatorView!
     
     var searchController = UISearchController()
     var presenter : GitRepoPresenter?
@@ -84,4 +85,19 @@ extension RepositoriesListViewController : GitRepoPresenterView{
             self.repositoryTable.reloadData()
         }
     }
+    
+    func startShowingLoading(){
+        DispatchQueue.main.async {
+            self.loading.isHidden = false
+            self.loading.startAnimating()
+        }
+    }
+    
+    func endShowingLoading(){
+        DispatchQueue.main.async {
+            self.loading.isHidden = true
+            self.loading.stopAnimating()
+        }
+    }
+    
 }

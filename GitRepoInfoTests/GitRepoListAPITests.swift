@@ -81,7 +81,6 @@ class GitRepoListAPITests: XCTestCase {
           }
           
           do{
-            print("promise value : \(promise.description)")
               _ = try JSONDecoder().decode(GitRepositories.self, from: data!)
             if(isTestApiCallComplete == true){
                 statusCode = (response as? HTTPURLResponse)?.statusCode

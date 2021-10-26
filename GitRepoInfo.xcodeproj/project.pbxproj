@@ -29,6 +29,7 @@
 		6A7DF2E52726722D00894D75 /* GitRepoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7DF2E42726722D00894D75 /* GitRepoMainViewController.swift */; };
 		6A7DF2EA2726763500894D75 /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7DF2E92726763500894D75 /* ImageUtils.swift */; };
 		6A7DF2EF27267A3700894D75 /* GitRepoListAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7DF2EE27267A3700894D75 /* GitRepoListAPITests.swift */; };
+		6A7DF2FD2726F99100894D75 /* GitRepoPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7DF2FC2726F99100894D75 /* GitRepoPresenterTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		6A7DF2E42726722D00894D75 /* GitRepoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoMainViewController.swift; sourceTree = "<group>"; };
 		6A7DF2E92726763500894D75 /* ImageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
 		6A7DF2EE27267A3700894D75 /* GitRepoListAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoListAPITests.swift; sourceTree = "<group>"; };
+		6A7DF2FC2726F99100894D75 /* GitRepoPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoPresenterTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 		6A26883B2723EA6F003A2EE0 /* GitRepoInfoTests */ = {
 			isa = PBXGroup;
 			children = (
+				6A7DF2FC2726F99100894D75 /* GitRepoPresenterTest.swift */,
 				6A7DF2EE27267A3700894D75 /* GitRepoListAPITests.swift */,
 				6A26883C2723EA6F003A2EE0 /* GitRepoInfoTests.swift */,
 				6A26883E2723EA6F003A2EE0 /* Info.plist */,
@@ -388,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A26883D2723EA6F003A2EE0 /* GitRepoInfoTests.swift in Sources */,
+				6A7DF2FD2726F99100894D75 /* GitRepoPresenterTest.swift in Sources */,
 				6A7DF2EF27267A3700894D75 /* GitRepoListAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
