@@ -38,26 +38,37 @@ class GitRepoPresenterTest: XCTestCase {
         }
     }
     
+    //Testing whether presenter can call getResultsForSearchWithRepoName function or not in presenter view
     func testFilterResultsSearchedByString(){
         self.presenter.getResultForSearchingWithName(searchText: "l")
         XCTAssertTrue(gitRepPresenterViewMock.isShowResultSearchedByName)
     }
 
+    
+    //Testing whether presenter can call startShowingLoading function or not in presenter view
     func testShowLoading(){
         self.gitRepPresenterViewMock.startShowingLoading()
         XCTAssertTrue(gitRepPresenterViewMock.isShowLoading)
     }
     
+    
+    //Testing whether presenter can call endShowingLoading function or not in presenter view
     func testHideLoading(){
         self.gitRepPresenterViewMock.endShowingLoading()
         XCTAssertFalse(gitRepPresenterViewMock.isShowLoading)
     }
     
+    
+    //Testing whether presenter can call success function or not in presenter view after API returns value
     func testGetRepoListAPICallSuccess(){
         self.setCorrectApiHeaderForRepoListApi()
-        XCTAssertTrue(gitRepPresenterViewMock.isAPICallSuccess)
+        DispatchQueue.main.async {
+            XCTAssertTrue(self.gitRepPresenterViewMock.isAPICallSuccess)
+        }
+        
     }
     
+    //Testing whether presenter can call failure function or not in presenter view when API gets error
     func testGetRepoListAPICallFailure(){
         self.setWrongApiHeaderForRepoListApi()
         DispatchQueue.main.async {
@@ -66,6 +77,7 @@ class GitRepoPresenterTest: XCTestCase {
         
     }
     
+    //Create API correct url and correct header and pass to network function
     func setCorrectApiHeaderForRepoListApi(){
         guard var components = URLComponents(string: API.repoHostName + URLPath.search + EndPoints.repositories)else {return}
         components.queryItems = [URLQueryItem(name: QueryKeys.q, value: QueryValues.repositories)]
@@ -74,14 +86,18 @@ class GitRepoPresenterTest: XCTestCase {
         self.getRepositoryList(urlRequest: request, promise: promise)
     }
     
+    
+    //Create API wrong url and wrong header and pass to network function
     func setWrongApiHeaderForRepoListApi(){
         guard var components = URLComponents(string: "https://api.gi.com/search/re")else {return}
-        components.queryItems = [URLQueryItem(name: QueryKeys.q, value: QueryValues.repositories)]
+        components.queryItems = [URLQueryItem(name: "w", value: "b")]
         let request = URLRequest(url: components.url!)
         let promise = expectation(description: "Can't get data successfully")
         self.getRepositoryList(urlRequest: request, promise: promise, failCase: true)
     }
     
+    
+    //Call api according to url request
     func getRepositoryList(urlRequest : URLRequest, promise : XCTestExpectation, failCase : Bool = false){
         
         let presenterViewMock : GitRepoPresenterViewMock = GitRepoPresenterViewMock()
@@ -108,10 +124,7 @@ class GitRepoPresenterTest: XCTestCase {
           
           do{
                 _ = try JSONDecoder().decode(GitRepositories.self, from: data!)
-                DispatchQueue.main.async {
-                    presenterViewMock.success()
-                }
-            
+                presenterViewMock.success()
                 promise.fulfill()
             }catch{
                 if(failCase == true){

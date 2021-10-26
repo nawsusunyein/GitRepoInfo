@@ -52,3 +52,11 @@ struct ErrorMessage{
     static let serverErrorMsg = "Please check internet connection (or) \n request headers in API (or) \n Server side"
     static let otherErrorMsg = "Please check data response type conversion"
 }
+
+struct MIMEType{
+    static let jsonType = "application/json"
+}
+
+struct AlertActionButtonTitle{
+    static let okTitle = "OK"
+}

@@ -23,12 +23,14 @@ class GitRepoPresenter {
     private weak var gitRepoListPresenterView : GitRepoPresenterView?
     private weak var networkService : NetworkServices?
     
+    //Initialize presenter
     init(view : GitRepoPresenterView,service : NetworkServices){
         self.gitRepoListPresenterView = view
         self.networkService = service
         self.getRepositories()
     }
-        
+    
+    //Call repository list api
     func getRepositories(){
         self.gitRepoListPresenterView?.startShowingLoading()
         networkService?.getRepositories{[weak self] result in
@@ -60,6 +62,8 @@ class GitRepoPresenter {
         }
     }
     
+
+   //Get resulted values according to search text
    func getResultForSearchingWithName(searchText : String?){
         if let results = searchText{
             self.filterRepoItems = self.repoItems?.filter{(repository) -> Bool in

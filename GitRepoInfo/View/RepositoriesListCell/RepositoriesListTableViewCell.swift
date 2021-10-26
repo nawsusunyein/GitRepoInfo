@@ -24,6 +24,8 @@ class RepositoriesListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    
+    //Bind data in table view cell
     func bindDataForRepoItem(repoItem : GitItems?){
         self.lblGitRepoName.text = repoItem?.name ?? ""
         self.lblVisibility.text = repoItem?.visibility ?? ""

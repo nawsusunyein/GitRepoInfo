@@ -32,6 +32,8 @@ class GitRepoListAPITests: XCTestCase {
         }
     }
     
+    
+    //Test API is successful with correct host name and end ponts
     func testGetRepoListAPICallWithCorrectHostAndEndPoints(){
        
         guard var components = URLComponents(string: API.repoHostName + URLPath.search + EndPoints.repositories)else {return}
@@ -41,6 +43,8 @@ class GitRepoListAPITests: XCTestCase {
         self.getRepositoryList(urlRequest: request, promise: promise)
     }
 
+    
+    //Test API fails with wrong host name and end point
     func testGetRepoListAPICallFailWithWrongHostName(){
         guard let components = URLComponents(string: "https://api.giu.com/search/repositories") else {return}
         let request = URLRequest(url: components.url!)
@@ -48,6 +52,8 @@ class GitRepoListAPITests: XCTestCase {
         self.getRepositoryList(urlRequest: request, promise: promise, failCase: true)
     }
     
+    
+    //Test API call has finished
     func testGetRepoListApiCallComplete(){
         guard var components = URLComponents(string: API.repoHostName + URLPath.search + EndPoints.repositories)else {return}
         components.queryItems = [URLQueryItem(name: QueryKeys.q, value: QueryValues.repositories)]
@@ -56,14 +62,14 @@ class GitRepoListAPITests: XCTestCase {
         self.getRepositoryList(urlRequest: request, promise: promise, isTestApiCallComplete: true)
     }
     
+    
+    //Call repo list api
     func getRepositoryList(urlRequest : URLRequest, promise : XCTestExpectation, failCase : Bool = false, isTestApiCallComplete : Bool = false){
         
         var statusCode: Int?
         var responseError: Error?
         
-        // when
       URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-          // then
           guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else{
               XCTFail("Server Error : \(error?.localizedDescription)")
              if(failCase == true){

@@ -8,6 +8,8 @@
 import Foundation
 
 class NetworkServices {
+    
+    //Call repo list API
     func getRepositories(completion: @escaping(Result<GitRepositories,APIError>) -> Void){
         guard var components = URLComponents(string: API.repoHostName + URLPath.search + EndPoints.repositories)else {return}
         components.queryItems = [URLQueryItem(name: QueryKeys.q, value: QueryValues.repositories)]
@@ -20,7 +22,7 @@ class NetworkServices {
                 return
             }
             
-            guard let mime = response?.mimeType, mime == "application/json" else{
+            guard let mime = response?.mimeType, mime == MIMEType.jsonType else{
                 completion(.failure(.mimeError))
                 return
             }
