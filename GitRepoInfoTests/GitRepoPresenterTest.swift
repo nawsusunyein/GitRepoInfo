@@ -140,7 +140,7 @@ class GitRepoPresenterTest: XCTestCase {
           }
         
         }.resume()
-      wait(for: [promise], timeout: 5)
+      wait(for: [promise], timeout: 300)
     }
 }
 
