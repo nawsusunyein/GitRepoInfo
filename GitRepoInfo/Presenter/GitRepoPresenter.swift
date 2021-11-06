@@ -13,6 +13,7 @@ protocol GitRepoPresenterView : class{
     func getResultsForSearchWithRepoName()
     func startShowingLoading()
     func endShowingLoading()
+    func sumOfTwoValues(total : Int)
 }
 
 class GitRepoPresenter {
@@ -62,7 +63,11 @@ class GitRepoPresenter {
         }
     }
     
-
+    func calculateTwoValues(a: Int, b: Int){
+        let total = a + b
+        self.gitRepoListPresenterView?.sumOfTwoValues(total: total)
+    }
+    
    //Get resulted values according to search text
    func getResultForSearchingWithName(searchText : String?){
         if let results = searchText{

@@ -132,4 +132,7 @@ extension RepositoriesListViewController : GitRepoPresenterView{
         }
     }
     
+    func sumOfTwoValues(total : Int){
+        print("total values is : \(total)")
+    }
 }

@@ -68,6 +68,11 @@ class GitRepoPresenterTest: XCTestCase {
         
     }
     
+    func testSumOfTwoValues(){
+        let _ = self.presenter.calculateTwoValues(a: 10, b: 20)
+        XCTAssertTrue(self.gitRepPresenterViewMock.isSumVaue)
+    }
+    
     //Testing whether presenter can call failure function or not in presenter view when API gets error
     func testGetRepoListAPICallFailure(){
         self.setWrongApiHeaderForRepoListApi()
@@ -140,11 +145,14 @@ class GitRepoPresenterTest: XCTestCase {
 }
 
 class GitRepoPresenterViewMock : GitRepoPresenterView{
+   
+    
     
     var isShowResultSearchedByName : Bool = false
     var isShowLoading : Bool = false
     var isAPICallSuccess : Bool = false
     var isAPICallFailure : Bool = false
+    var isSumVaue : Bool = false
     
     func success() {
         isAPICallSuccess = true
@@ -166,6 +174,9 @@ class GitRepoPresenterViewMock : GitRepoPresenterView{
         isShowLoading = false
     }
     
+    func sumOfTwoValues(total: Int) {
+        isSumVaue = true
+    }
   
 }
 
