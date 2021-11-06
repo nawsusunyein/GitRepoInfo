@@ -62,10 +62,8 @@ class GitRepoPresenterTest: XCTestCase {
     //Testing whether presenter can call success function or not in presenter view after API returns value
     func testGetRepoListAPICallSuccess(){
         self.setCorrectApiHeaderForRepoListApi()
-        DispatchQueue.main.async {
             XCTAssertTrue(self.gitRepPresenterViewMock.isAPICallSuccess)
-        }
-        
+      
     }
     
     func testSumOfTwoValues(){
@@ -129,7 +127,10 @@ class GitRepoPresenterTest: XCTestCase {
           
           do{
                 _ = try JSONDecoder().decode(GitRepositories.self, from: data!)
+            DispatchQueue.main.async {
                 presenterViewMock.success()
+            }
+              
                 promise.fulfill()
             }catch{
                 if(failCase == true){
