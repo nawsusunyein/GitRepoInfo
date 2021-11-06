@@ -62,8 +62,7 @@ class GitRepoPresenterTest: XCTestCase {
     //Testing whether presenter can call success function or not in presenter view after API returns value
     func testGetRepoListAPICallSuccess(){
         self.setCorrectApiHeaderForRepoListApi()
-            XCTAssertTrue(self.gitRepPresenterViewMock.isAPICallSuccess)
-      
+           
     }
     
     func testSumOfTwoValues(){
@@ -74,10 +73,6 @@ class GitRepoPresenterTest: XCTestCase {
     //Testing whether presenter can call failure function or not in presenter view when API gets error
     func testGetRepoListAPICallFailure(){
         self.setWrongApiHeaderForRepoListApi()
-        DispatchQueue.main.async {
-            XCTAssertTrue(self.gitRepPresenterViewMock.isAPICallFailure)
-        }
-        
     }
     
     //Create API correct url and correct header and pass to network function
