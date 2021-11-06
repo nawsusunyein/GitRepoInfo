@@ -71,7 +71,7 @@ class GitRepoListAPITests: XCTestCase {
         
       URLSession.shared.dataTask(with: urlRequest) { data, response, error in
           guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else{
-            XCTFail("Server Error : \(String(describing: error?.localizedDescription))")
+            XCTAssertNotNil(error?.localizedDescription)
              if(failCase == true){
                 promise.fulfill()
               }
