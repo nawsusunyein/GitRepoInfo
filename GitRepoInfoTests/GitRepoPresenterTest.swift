@@ -72,7 +72,7 @@ class GitRepoPresenterTest: XCTestCase {
     
     
     func testTwoMultiplyValues(){
-        let _ = self.presenter.multiplyTwoValues(a: 2, b: 4)
+        let _ = self.presenter.multiplyTwoValues(a: 10, b: 4)
         XCTAssertTrue(self.gitRepPresenterViewMock.isSumVaue)
     }
     
