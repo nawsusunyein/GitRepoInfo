@@ -68,6 +68,11 @@ class GitRepoPresenter {
         self.gitRepoListPresenterView?.sumOfTwoValues(total: total)
     }
     
+    func multiplyTwoValues(a: Int, b: Int){
+        let total = a * b
+        self.gitRepoListPresenterView?.sumOfTwoValues(total: total)
+    }
+    
    //Get resulted values according to search text
    func getResultForSearchingWithName(searchText : String?){
         if let results = searchText{

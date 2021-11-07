@@ -70,6 +70,12 @@ class GitRepoPresenterTest: XCTestCase {
         XCTAssertTrue(self.gitRepPresenterViewMock.isSumVaue)
     }
     
+    
+    func testTwoMultiplyValues(){
+        let _ = self.presenter.multiplyTwoValues(a: 2, b: 4)
+        XCTAssertTrue(self.gitRepPresenterViewMock.isSumVaue)
+    }
+    
     //Testing whether presenter can call failure function or not in presenter view when API gets error
     func testGetRepoListAPICallFailure(){
         self.setWrongApiHeaderForRepoListApi()
